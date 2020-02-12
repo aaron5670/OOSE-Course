@@ -1,2 +1,2 @@
 # OOSE-DEA-Course
-OOSE - Distributed Enterprise Applications Course
+Object Oriented Software Engineering (OOSE) - Distributed Enterprise Applications Course
