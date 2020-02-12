@@ -1,8 +1,6 @@
 package nl.han.ica.oose.dea;
 import nl.han.ica.oose.dea.helpers.Product;
-
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 class Streams {
@@ -30,8 +28,6 @@ class Streams {
     }
 
     int calculateTotalCostOfAllProducts(List<Product> products) {
-        // implement
-
-        return 0;
+        return products.stream().mapToInt(Product::getPrice).sum();
     }
 }
