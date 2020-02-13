@@ -9,12 +9,15 @@ public class Spel {
     public static void main(String[] args) {
         Spel spel = new Spel();
         spel.meldAan("Aaron");
-        spel.teleporteer("Aaron", 1);
+        spel.meldAan("John");
+
         spel.teleporteer("Aaron", 2);
-        spel.teleporteer("Aaron", 0);
-        spel.teleporteer("Aaron", 1);
-        spel.teleporteer("Aaron", 0);
-        spel.teleporteer("Aaron", 2);
+        spel.wisselVakje("Aaron", 1);
+        spel.wisselVakje("Aaron", 2);
+        spel.teleporteer("John", 0);
+        spel.wisselVakje("John", 2);
+        spel.wisselVakje("John", 2); // <-- error
+
     }
 
     public void meldAan(String naamKarakter) {
@@ -25,10 +28,18 @@ public class Spel {
         System.out.println(naamKarakter + " is succesvol aangemeld met " + k.getEnergie() + " energie!\n------------");
     }
 
-    public void teleporteer(String naamKarakter, int vaknr) {
+    public void teleporteer(String naamKarakter, int doelVak) {
         for (Karakter karakter: karakters) {
             if (naamKarakter.equals(karakter.getNaam())) {
-                bord.plaatsOpVakje(karakter, vaknr);
+                bord.plaatsOpVakje(karakter, doelVak);
+            }
+        }
+    }
+
+    public void wisselVakje(String naamKarakter, int vaknr) {
+        for (Karakter karakter: karakters) {
+            if (naamKarakter.equals(karakter.getNaam())) {
+                bord.wisselVakje(karakter, vaknr);
             }
         }
     }

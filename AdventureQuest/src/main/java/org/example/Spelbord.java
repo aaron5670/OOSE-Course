@@ -38,7 +38,7 @@ public class Spelbord {
                     //Zet speler op het nieuwe vakje
                     k.setVakje(vakje);
 
-                    //Verander energie
+                    //Verminder energie
                     k.setEnergie(k.getEnergie() - 20);
 
                     System.out.println(k.getNaam() + " is geteleporteerd naar " + vaknr + ", energie is nu " + k.getEnergie());
@@ -46,6 +46,36 @@ public class Spelbord {
                     System.out.println("------------");
                 } else {
                     System.out.println("Vakje " + vaknr + " is al bezet door een andere speler!");
+                }
+            }
+        }
+    }
+
+    public void wisselVakje(Karakter k, int doelVak) {
+        for (Vakje vakje : vakjes) {
+            if (doelVak == vakje.getVaknr()) {
+                if (vakje.getKarakter() != null) {
+                    if (k.getVakje().getVaknr() == doelVak) {
+                        System.out.println("Je staat zelf al op dit vakje!");
+                        break;
+                    }
+
+                    if (k.getEnergie() >= 20) {
+                        Karakter huidigeSpeler = vakje.getKarakter();
+                        huidigeSpeler.setVakje(k.getVakje());
+                        k.setVakje(vakje);
+
+                        //Verminder energie
+                        k.setEnergie(k.getEnergie() - 20);
+                        System.out.println(k.getNaam() + " is gewisseld, energie is: " + k.getEnergie());
+
+                        bezetteVakjes();
+                        System.out.println("------------");
+                    }else {
+                        System.out.println("Initiatiefnemende speler heeft te weinig energie om te wisselen!");
+                    }
+                } else {
+                    System.out.println("Op vakje " + doelVak + " staat geen speler!");
                 }
             }
         }
@@ -70,6 +100,17 @@ public class Spelbord {
         for (Vakje vakje : vakjes) {
             if (vakje.getKarakter() == null) {
                 System.out.println("vakje " + vakje.getVaknr() + " is nu vrij!");
+            }
+        }
+    }
+
+    /**
+     * For testing purpose
+     */
+    private void bezetteVakjes() {
+        for (Vakje vakje : vakjes) {
+            if (vakje.getKarakter() != null) {
+                System.out.println("vakje " + vakje.getVaknr() + " is bezet door  " + vakje.getKarakter().getNaam());
             }
         }
     }
