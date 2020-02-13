@@ -10,9 +10,11 @@ public class Spel {
         Spel spel = new Spel();
         spel.meldAan("Aaron");
         spel.teleporteer("Aaron", 1);
-        spel.teleporteer("Aaron", 0);
         spel.teleporteer("Aaron", 2);
         spel.teleporteer("Aaron", 0);
+        spel.teleporteer("Aaron", 1);
+        spel.teleporteer("Aaron", 0);
+        spel.teleporteer("Aaron", 2);
     }
 
     public void meldAan(String naamKarakter) {

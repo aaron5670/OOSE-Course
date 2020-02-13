@@ -33,11 +33,10 @@ public class Spelbord {
                     //vrijeVakjes();
 
                     //Verwijder speler het oude vakje
-                    Vakje oudeVakje = k.getVakje();
-                    oudeVakje.setKarakter(null);
+                    k.getVakje().setKarakter(null);
 
                     //Zet speler op het nieuwe vakje
-                    vakje.setKarakter(k);
+                    k.setVakje(vakje);
 
                     //Verander energie
                     k.setEnergie(k.getEnergie() - 20);
@@ -52,14 +51,6 @@ public class Spelbord {
         }
     }
 
-    private void vrijeVakjes() {
-        for (Vakje vakje : vakjes) {
-            if (vakje.getKarakter() == null) {
-                System.out.println("vakje " + vakje.getVaknr() + " is vrij!");
-            }
-        }
-    }
-
     private Vakje kiesVrijVakje() {
         System.out.println("Controleren of er nog een vrij vakje is...");
         Vakje v = null;
@@ -70,5 +61,16 @@ public class Spelbord {
             }
         }
         return v;
+    }
+
+    /**
+     * For testing purpose
+     */
+    private void vrijeVakjes() {
+        for (Vakje vakje : vakjes) {
+            if (vakje.getKarakter() == null) {
+                System.out.println("vakje " + vakje.getVaknr() + " is nu vrij!");
+            }
+        }
     }
 }
