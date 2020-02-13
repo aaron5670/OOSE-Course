@@ -3,7 +3,6 @@ package oose.dea.bankdemo;
 public class Bank {
     private int saldo = 100;
 
-
     public synchronized void stort(int amount) {
         System.out.println("Saldo voor storting " + saldo + ", stort: " + amount);
         saldo = saldo + amount;
@@ -37,7 +36,6 @@ public class Bank {
         //bank.neemOp(80);
         //bank.neemOp(100);
 
-
 		/*
 		/* Thread example
 		 */
@@ -57,7 +55,5 @@ public class Bank {
         thread1.start();
         thread2.start();
         thread3.start();
-
-
     }
 }
