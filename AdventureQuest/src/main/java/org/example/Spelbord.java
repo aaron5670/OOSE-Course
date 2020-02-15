@@ -39,7 +39,7 @@ public class Spelbord {
                     k.setVakje(vakje);
 
                     //Verminder energie
-                    k.setEnergie(k.getEnergie() - 20);
+                    verminderEnergie(k,20);
 
                     System.out.println(k.getNaam() + " is geteleporteerd naar " + vaknr + ", energie is nu " + k.getEnergie());
                     vrijeVakjes();
@@ -66,7 +66,7 @@ public class Spelbord {
                         k.setVakje(vakje);
 
                         //Verminder energie
-                        k.setEnergie(k.getEnergie() - 20);
+                        verminderEnergie(k, 20);
                         System.out.println(k.getNaam() + " is gewisseld, energie is: " + k.getEnergie());
 
                         bezetteVakjes();
@@ -79,6 +79,10 @@ public class Spelbord {
                 }
             }
         }
+    }
+
+    private void verminderEnergie(Karakter k, int energie) {
+        k.setEnergie(k.getEnergie() - energie);
     }
 
     private Vakje kiesVrijVakje() {
