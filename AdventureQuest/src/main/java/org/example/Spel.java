@@ -17,7 +17,6 @@ public class Spel {
         spel.teleporteer("John", 0);
         spel.wisselVakje("John", 2);
         spel.wisselVakje("John", 2); // <-- error
-
     }
 
     public void meldAan(String naamKarakter) {

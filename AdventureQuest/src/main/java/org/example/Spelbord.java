@@ -35,7 +35,8 @@ public class Spelbord {
                     //vrijeVakjes();
 
                     //Verwijder speler het oude vakje
-                    k.getVakje().setKarakter(null);
+                    Vakje oudeVakje = k.getVakje();
+                    oudeVakje.setKarakter(null);
 
                     //Zet speler op het nieuwe vakje
                     k.setVakje(vakje);
