@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Spel {
     private ArrayList<Karakter> karakters = new ArrayList<>();
-    Spelbord bord = new Spelbord();
+    Spelbord bord = new Spelbord(3);
 
     public static void main(String[] args) {
         Spel spel = new Spel();

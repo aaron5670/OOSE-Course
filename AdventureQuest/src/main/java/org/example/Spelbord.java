@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 public class Spelbord {
     private ArrayList<Vakje> vakjes = new ArrayList<Vakje>();
+    private int aantalVakjes;
 
-    public Spelbord() {
+    public Spelbord(int aantalVakjes) {
+        this.aantalVakjes = aantalVakjes;
         maakVakjesAan();
     }
 
     private void maakVakjesAan() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < aantalVakjes; i++) {
             vakjes.add(new Vakje(i));
         }
     }
