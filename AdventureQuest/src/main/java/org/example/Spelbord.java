@@ -30,7 +30,7 @@ public class Spelbord {
         vakjes.forEach(vakje -> {
             if (k == vakje.getKarakter() && vaknr != vakje.getVaknr()) {
                 vakje.leegVakje();
-            }else if (vaknr == vakje.getVaknr()) {
+            } else if (vaknr == vakje.getVaknr()) {
                 if (vakje.getKarakter() == null) {
                     vakje.setKarakter(k);
                     k.verminderEnergie(20);
