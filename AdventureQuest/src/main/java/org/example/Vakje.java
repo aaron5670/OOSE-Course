@@ -19,4 +19,8 @@ public class Vakje {
     public int getVaknr() {
         return vaknr;
     }
+
+    public void leegVakje() {
+        this.karakter = null;
+    }
 }

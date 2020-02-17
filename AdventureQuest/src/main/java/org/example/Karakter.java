@@ -11,10 +11,6 @@ public class Karakter {
         vervoermiddel = new Vervoermiddel();
     }
 
-    public Vakje getVakje() {
-        return vakje;
-    }
-
     public String getNaam() {
         return naam;
     }
@@ -27,8 +23,7 @@ public class Karakter {
         this.energie = energie;
     }
 
-    public void setVakje(Vakje v) {
-        vakje = v;
-        v.setKarakter(this);
+    void verminderEnergie(int energie) {
+        setEnergie(getEnergie() - energie);
     }
 }
