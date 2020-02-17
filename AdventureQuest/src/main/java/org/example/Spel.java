@@ -15,7 +15,7 @@ public class Spel {
     }
 
     public void teleporteer(String naamKarakter, int doelVak) {
-        for (Karakter karakter: karakters) {
+        for (Karakter karakter : karakters) {
             if (naamKarakter.equals(karakter.getNaam())) {
                 bord.teleporteer(karakter, doelVak);
             }
@@ -23,19 +23,10 @@ public class Spel {
     }
 
     public void wisselVakje(String naamKarakter, int vaknr) {
-        for (Karakter karakter: karakters) {
+        for (Karakter karakter : karakters) {
             if (naamKarakter.equals(karakter.getNaam())) {
                 bord.wisselVakje(karakter, vaknr);
             }
         }
     }
-
-//    public Karakter getKarakter(String naam, int doelVak) {
-//        for (Karakter k : karakters) {
-//            if (naam.equals(k.getNaam())) {
-//                return k;
-//            }
-//        }
-//        return null;
-//    }
 }
