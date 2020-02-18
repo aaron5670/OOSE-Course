@@ -45,19 +45,22 @@ public class Spelbord {
     }
 
     public void wisselVakje(Karakter k, int targetVak) {
-        Karakter targetKarakter = null;
-        for (Vakje v : vakjes) {
-            if (v.getVaknr() == targetVak) {
-                targetKarakter = v.getKarakter();
-                v.setKarakter(k);
+        if (k.getEnergie() >= 20) {
+            Karakter targetKarakter = null;
+            for (Vakje v : vakjes) {
+                if (v.getVaknr() == targetVak) {
+                    targetKarakter = v.getKarakter();
+                    v.setKarakter(k);
+                }
             }
-        }
-        for (Vakje v : vakjes) {
-            if (k == v.getKarakter() && v.getVaknr() != targetVak) {
-                v.setKarakter(targetKarakter);
+            for (Vakje v : vakjes) {
+                if (k == v.getKarakter() && v.getVaknr() != targetVak) {
+                    v.setKarakter(targetKarakter);
+                }
             }
-        }
 
+            k.verminderEnergie(20);
+        }
         //For testing purpose
         bezetteVakjes();
     }
