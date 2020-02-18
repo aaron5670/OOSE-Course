@@ -1,7 +1,7 @@
 # 📚 OOSE OOAD & DEA Course
-Object Oriented Software Engineering (OOSE) - Distributed Enterprise Applications Course
+Object Oriented Software Engineering (OOSE) & Distributed Enterprise Applications Course.
 
-Personal repository for learning Object Oriented Software Engineering DEA ✏️.
+This is my personal repository for learning Object Oriented Software Engineering (OOSE) & Distributed Enterprise Application (DEA). ✏️
 
 ### ⬇️🌐 Dutch course explanation
 In OOAD (Object Oriented Analysis and Design) wordt voor het eerst kennis gemaakt met het actief gebruiken van UML voor software ontwerp. Gedurende 9 weken worden er opgaven gemaakt waarbij geoefend wordt met use cases, class diagrams, statechart diagrams, sequence diagrams, operatie contracten en software architectuur.
