@@ -41,8 +41,7 @@ public class CalculatorTest {
     @Test
     public void testDivideByZero() {
         Calculator calculator = new Calculator();
-        assertThrows(IllegalArgumentException.class,
-                () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
                     calculator.divide(100, 0);
                 }
         );
