@@ -1,7 +1,7 @@
 # 📚 OOSE OOAD & DEA Course
-Object Oriented Software Engineering (OOSE) - Distributed Enterprise Applications Course
+Object Oriented Software Engineering (OOSE) & Distributed Enterprise Applications Course.
 
-Personal repository for learning Object Oriented Software Engineering DEA ✏️.
+This is my personal repository for learning Object Oriented Software Engineering (OOSE) & Distributed Enterprise Application (DEA). ✏️
 
 ### ⬇️🌐 Dutch course explanation
 In OOAD (Object Oriented Analysis and Design) wordt voor het eerst kennis gemaakt met het actief gebruiken van UML voor software ontwerp. Gedurende 9 weken worden er opgaven gemaakt waarbij geoefend wordt met use cases, class diagrams, statechart diagrams, sequence diagrams, operatie contracten en software architectuur.
@@ -10,3 +10,11 @@ Aan ontwikkelaars worden steeds hogere en meer diverse eisen gesteld. Naast het 
 Deze course bouwt voort op de voorkennis uit de courses SPD en OOPD die je met goed gevolg hebt afgerond. We maken gebruik van het Java platform, maar zullen vooral ingaan op de concepten en ideeën achter de gebruikte technologie zodat je snel kunt wisselen naar een vergelijkbaar platform zoals .NET.
 
 **Bron:** *[GitHub HAN ICA - OOSE DEA](https://github.com/HANICA-DEA)*
+
+
+### 📓Test notes
+- [Exceptions](https://github.com/aaron5670/OOSE-Course/blob/master/exceptions.md)
+- [Maven](https://github.com/aaron5670/OOSE-Course/blob/master/maven.md)
+- [Multi Threading](https://github.com/aaron5670/OOSE-Course/blob/master/multi-threading.md)
+- [Refactoring](https://github.com/aaron5670/OOSE-Course/blob/master/refactoring.md)
+- [Unit Testing](https://github.com/aaron5670/OOSE-Course/blob/master/unit-tests.md)
