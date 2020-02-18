@@ -10,3 +10,11 @@ Aan ontwikkelaars worden steeds hogere en meer diverse eisen gesteld. Naast het 
 Deze course bouwt voort op de voorkennis uit de courses SPD en OOPD die je met goed gevolg hebt afgerond. We maken gebruik van het Java platform, maar zullen vooral ingaan op de concepten en ideeën achter de gebruikte technologie zodat je snel kunt wisselen naar een vergelijkbaar platform zoals .NET.
 
 **Bron:** *[GitHub HAN ICA - OOSE DEA](https://github.com/HANICA-DEA)*
+
+
+### 📓Test notes
+- [Exceptions](https://github.com/aaron5670/OOSE-Course/blob/master/exceptions.md)
+- [Maven](https://github.com/aaron5670/OOSE-Course/blob/master/maven.md)
+- [Multi Threading](https://github.com/aaron5670/OOSE-Course/blob/master/multi-threading.md)
+- [Refactoring](https://github.com/aaron5670/OOSE-Course/blob/master/refactoring.md)
+- [Unit Testing](https://github.com/aaron5670/OOSE-Course/blob/master/unit-tests.md)
