@@ -18,3 +18,4 @@ Deze course bouwt voort op de voorkennis uit de courses SPD en OOPD die je met g
 - [Multi Threading](https://github.com/aaron5670/OOSE-Course/blob/master/multi-threading.md)
 - [Refactoring](https://github.com/aaron5670/OOSE-Course/blob/master/refactoring.md)
 - [Unit Testing](https://github.com/aaron5670/OOSE-Course/blob/master/unit-tests.md)
+- [Stream](https://github.com/aaron5670/OOSE-Course/blob/master/stream.md)
