@@ -25,6 +25,10 @@ public class StarWars {
     @Path("lightsaber")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    /*
+     * Huiswerk, laat het gebruik maken van een DAO (Data Access Object).
+     * En maak hier een test van (100% Code Covarage) + Workshop
+     */
     public Response getLightSaber(JediDTO jedi) {
         LightSaberDTO lightSaberDTO = new LightSaberDTO();
         lightSaberDTO.color = "red";
