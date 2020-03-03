@@ -12,7 +12,6 @@ public class JediDAO implements IJediDAO {
     public Jedi getJedi(int customerId) {
         if (customerId < 0) return null;
 
-
         //ToDo: Get data from database
         Jedi jedi = new Jedi();
         jedi.setCustomerId(customerId);

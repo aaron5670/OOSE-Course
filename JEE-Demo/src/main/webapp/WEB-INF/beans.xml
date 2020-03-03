@@ -7,5 +7,6 @@
     <!-- Hier geef ik aan als ik een Alternative Interface implementatie wil gaan gebruiken -->
     <alternatives>
         <class>oose.dea.dao.JediExcelDAO</class>
+        <class>oose.dea.dao.LightsaberExcelDAO</class>
     </alternatives>
 </beans>

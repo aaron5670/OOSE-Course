@@ -3,7 +3,9 @@ package oose.dea.api;
 import oose.dea.api.dto.JediDTO;
 import oose.dea.api.dto.LightSaberDTO;
 import oose.dea.dao.IJediDAO;
+import oose.dea.dao.ILightsaberDAO;
 import oose.dea.domain.Jedi;
+import oose.dea.domain.Lightsaber;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -13,8 +15,9 @@ import javax.ws.rs.core.Response;
 @Path("starwars")
 public class StarWars {
 
-    private IJediDAO IJediDAO;
+    private ILightsaberDAO ILightsaberDAO;
 
+    private IJediDAO IJediDAO;
     @GET
     @Path("hello")
     public String hello() {
@@ -30,9 +33,13 @@ public class StarWars {
      * En maak hier een test van (100% Code Covarage) + Workshop
      */
     public Response getLightSaber(JediDTO jedi) {
+        Lightsaber lightsaber = ILightsaberDAO.getLightsaber();
+        if (lightsaber == null)
+            return Response.status(404).build();
+
         LightSaberDTO lightSaberDTO = new LightSaberDTO();
-        lightSaberDTO.color = "red";
-        lightSaberDTO.sides = 8;
+        lightSaberDTO.color = lightsaber.getColor();
+        lightSaberDTO.sides = lightsaber.getSides();
 
         return Response.status(200).entity(lightSaberDTO).build();
     }
@@ -55,6 +62,11 @@ public class StarWars {
     //Hiermee injecteer ik de implementatie van de Interface,
     //Omdat er twee verschillende Interface implementaties zijn, moet ik er een @Default maken, en de rest @Alternative
     //Als er dus meer dan 1 Interface is, moet ik in webapp/WEB-INF/beans.xml aangeven welke Interface ik wil gebruiken.
+    @Inject
+    public void setILightsaberDAO(ILightsaberDAO ILightsaberDAO) {
+        this.ILightsaberDAO = ILightsaberDAO;
+    }
+
     @Inject
     public void setJediDAO(IJediDAO IJediDAO) {
         this.IJediDAO = IJediDAO;
