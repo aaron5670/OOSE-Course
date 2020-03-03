@@ -49,6 +49,10 @@ public class StarWars {
         return Response.status(200).entity(jediDTO).build();
     }
 
+
+    //Hiermee injecteer ik de implementatie van de Interface,
+    //Omdat er twee verschillende Interface implementaties zijn, moet ik er een @Default maken, en de rest @Alternative
+    //Als er dus meer dan 1 Interface is, moet ik in webapp/WEB-INF/beans.xml aangeven welke Interface ik wil gebruiken.
     @Inject
     public void setJediDAO(IJediDAO IJediDAO) {
         this.IJediDAO = IJediDAO;
