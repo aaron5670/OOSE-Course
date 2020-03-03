@@ -32,10 +32,8 @@ public class StarWars {
      * Huiswerk, laat het gebruik maken van een DAO (Data Access Object).
      * En maak hier een test van (100% Code Covarage) + Workshop
      */
-    public Response getLightSaber(JediDTO jedi) {
+    public Response getlightsaber() {
         Lightsaber lightsaber = ILightsaberDAO.getLightsaber();
-        if (lightsaber == null)
-            return Response.status(404).build();
 
         LightSaberDTO lightSaberDTO = new LightSaberDTO();
         lightSaberDTO.color = lightsaber.getColor();

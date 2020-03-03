@@ -2,8 +2,12 @@ package oose.dea;
 
 import oose.dea.api.StarWars;
 import oose.dea.api.dto.JediDTO;
+import oose.dea.api.dto.LightSaberDTO;
 import oose.dea.dao.IJediDAO;
+import oose.dea.dao.ILightsaberDAO;
+import oose.dea.dao.LightsaberExcelDAO;
 import oose.dea.domain.Jedi;
+import oose.dea.domain.Lightsaber;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -49,7 +53,6 @@ public class StarWarsTest {
         assertEquals(1, jediDTO.customerId);
     }
 
-
     @Test
     public void getJediWithNullTest() {
         // Setup Mock
@@ -61,5 +64,24 @@ public class StarWarsTest {
         // actual test
         Response response = starWars.getJedi(13);
         assertEquals(404, response.getStatus());
+    }
+
+    @Test
+    public void getLightsaberTest() {
+        // Setup Mock
+        ILightsaberDAO lightsaberDAO = mock(ILightsaberDAO.class);
+        Lightsaber lightsaber = new Lightsaber();
+        lightsaber.setSides(4);
+        lightsaber.setColor("green");
+        when(lightsaberDAO.getLightsaber()).thenReturn(lightsaber);
+
+        starWars.setILightsaberDAO(lightsaberDAO);
+
+        Response response = starWars.getlightsaber();
+        LightSaberDTO lightSaberDTO = (LightSaberDTO) response.getEntity();
+
+        assertEquals(200, response.getStatus());
+        assertEquals("green", lightSaberDTO.color);
+        assertEquals(4, lightSaberDTO.sides);
     }
 }
