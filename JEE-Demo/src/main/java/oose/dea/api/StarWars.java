@@ -33,14 +33,13 @@ public class StarWars {
         return Response.status(200).entity(lightSaberDTO).build();
     }
 
-
     @GET
     @Path("customer/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getJedi(@PathParam("id") int id) {
         Jedi jedi = IJediDAO.getJedi(id);
-
-        if (jedi == null) return Response.status(404).build();
+        if (jedi == null)
+            return Response.status(404).build();
 
         JediDTO jediDTO = new JediDTO();
         jediDTO.customerId = jedi.getCustomerId();
@@ -48,7 +47,6 @@ public class StarWars {
 
         return Response.status(200).entity(jediDTO).build();
     }
-
 
     //Hiermee injecteer ik de implementatie van de Interface,
     //Omdat er twee verschillende Interface implementaties zijn, moet ik er een @Default maken, en de rest @Alternative
