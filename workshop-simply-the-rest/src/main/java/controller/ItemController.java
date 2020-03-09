@@ -1,9 +1,10 @@
 package controller;
 
-import dao.ItemDAO;
+import dao.IItemDAO;
 import dto.ItemDTO;
 
 import javax.ejb.Singleton;
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
@@ -12,45 +13,34 @@ import javax.ws.rs.core.Response;
             // Hiermee kan ik met de POST request een item toevoegen, en met het GET request het resultaat bekijken.
 public class ItemController {
 
-    private ItemDAO itemDAO;
-
-    public ItemController() {
-        this.itemDAO = new ItemDAO();
-    }
+    private IItemDAO IItemDAO;
 
     @GET
     @Path("/items-text")
     @Produces("text/plain")
-    public Response responseText() {
-        return Response.status(200).entity("bread, butter").build();
-    }
-
-    @GET
-    @Path("/items-json")
-    @Produces("application/json")
-    public Response responseJson() {
-        return Response.status(200).entity("[\"bread\", \"butter\"]").build();
+    public String getTextItems() {
+        return "bread, butter";
     }
 
     @GET
     @Path("/items-dto")
     @Produces("application/json")
-    public Response responseDTO() {
-        return Response.ok().entity(itemDAO.getAll()).build();
+    public Response getJsonItems() {
+        return Response.ok().entity(IItemDAO.getAll()).build();
     }
 
     @GET
     @Path("/items-dto/{id}")
     @Produces("application/json")
     public Response getItem(@PathParam("id") int id) {
-        return Response.ok().entity(itemDAO.getItem(id)).build();
+        return Response.ok().entity(IItemDAO.getItem(id)).build();
     }
 
     @POST
     @Path("/items-dto")
     @Consumes("application/json")
     public Response addItem(ItemDTO itemDTO) {
-        itemDAO.addItem(itemDTO);
+        IItemDAO.addItem(itemDTO);
 
         return Response.status(201).build();
     }
@@ -59,8 +49,13 @@ public class ItemController {
     @Path("/{id}")
     @Produces("application/json")
     public Response deleteItem(@PathParam("id") int id) {
-        itemDAO.deleteItem(id);
+        IItemDAO.deleteItem(id);
 
         return Response.ok().build();
+    }
+
+    @Inject
+    public void setItemDAO(IItemDAO IItemDAO) {
+        this.IItemDAO = IItemDAO;
     }
 }
