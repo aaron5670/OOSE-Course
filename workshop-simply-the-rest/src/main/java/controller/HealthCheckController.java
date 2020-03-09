@@ -1,10 +1,10 @@
-package controllers;
+package controller;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 @Path("/health")
-public class HealthCheckResource {
+public class HealthCheckController {
 
     @GET
     public String healthy() {
