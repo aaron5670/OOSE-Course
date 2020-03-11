@@ -8,33 +8,16 @@ public class Movie {
     private String title;
     private int releaseyear;
     private int pricecode;
+    private IMovieType movieType;
 
-    public Movie(String title, int year, int pricecode) {
+
+    public Movie(String title, int year, IMovieType movieType) {
         this.title = title;
         this.releaseyear = year;
-        this.pricecode = pricecode;
+        this.movieType = movieType;
     }
 
     public double getCharge(int daysRented) {
-        IMovieType movieType;
-
-        switch (pricecode) {
-            case Movie.REGULAR:
-                movieType = new Regular();
-
-                break;
-            case Movie.NEW_RELEASE:
-                movieType = new NewRelease();
-
-                break;
-            case Movie.CHILDREN:
-                movieType = new Children();
-                break;
-
-            default:
-                return 0;
-        }
-
         return movieType.getCharge(daysRented);
     }
 }

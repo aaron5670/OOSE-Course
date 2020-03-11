@@ -15,9 +15,9 @@ public class MovieTest {
 
     @BeforeAll
     public static void init(){
-        movieA = new Movie("Homeland", 2002, 1);
-        movieB = new Movie("The Apes", 2010, 2);
-        movieC = new Movie("The Rampage", 1998, 3);
+        movieA = new Movie("Homeland", 2002, new Regular());
+        movieB = new Movie("The Apes", 2010, new NewRelease());
+        movieC = new Movie("The Rampage", 1998, new Children());
     }
 
     @Test
