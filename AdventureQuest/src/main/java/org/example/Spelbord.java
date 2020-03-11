@@ -61,6 +61,7 @@ public class Spelbord {
 
             k.verminderEnergie(20);
         }
+
         //For testing purpose
         bezetteVakjes();
     }

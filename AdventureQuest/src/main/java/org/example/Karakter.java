@@ -3,12 +3,10 @@ package org.example;
 public class Karakter {
     private String naam;
     private int energie = 1000;
-    private Vakje vakje;
     private Vervoermiddel vervoermiddel;
 
     public Karakter(String naam) {
         this.naam = naam;
-        vervoermiddel = new Vervoermiddel();
     }
 
     public String getNaam() {
@@ -23,7 +21,15 @@ public class Karakter {
         this.energie = energie;
     }
 
-    void verminderEnergie(int energie) {
+    public void verminderEnergie(int energie) {
         setEnergie(getEnergie() - energie);
+    }
+
+    public void haalVervoermiddelUitGarage() {
+        this.vervoermiddel = vervoermiddel.haalVervoermiddelUitGarage();
+    }
+
+    public Vervoermiddel getVervoermiddel() {
+        return vervoermiddel;
     }
 }

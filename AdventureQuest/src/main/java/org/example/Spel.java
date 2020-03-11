@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class Spel {
     private ArrayList<Karakter> karakters = new ArrayList<>();
-    Spelbord bord = new Spelbord(3);
+    private Spelbord bord = new Spelbord(3);
+    private Garage garage = new Garage(1);
 
     public void meldAan(String naamKarakter) {
-        System.out.println(naamKarakter + " wordt aangemeld!");
         Karakter k = new Karakter(naamKarakter);
+        k.haalVervoermiddelUitGarage();
+
         karakters.add(k);
         bord.plaatsOpVrijVakje(k);
-        System.out.println(naamKarakter + " is succesvol aangemeld met " + k.getEnergie() + " energie!\n------------");
     }
 
     public void teleporteer(String naamKarakter, int doelVak) {
