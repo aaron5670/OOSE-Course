@@ -30,6 +30,7 @@ public class Movie {
             case Movie.CHILDREN:
                 movieType = new Children();
                 break;
+
             default:
                 return 0;
         }
