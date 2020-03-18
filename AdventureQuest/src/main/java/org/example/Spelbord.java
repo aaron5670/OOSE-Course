@@ -2,12 +2,12 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class Spelbord {
+public class Spelbord implements ITypeSpelbord {
     private ArrayList<Vakje> vakjes = new ArrayList<Vakje>();
     private int aantalVakjes;
 
-    public Spelbord(int aantalVakjes) {
-        this.aantalVakjes = aantalVakjes;
+    public Spelbord() {
+        this.aantalVakjes = 64;
         maakVakjesAan();
     }
 
@@ -64,6 +64,11 @@ public class Spelbord {
 
         //For testing purpose
         bezetteVakjes();
+    }
+
+    @Override
+    public Vakje getVakje(int i) {
+        return null;
     }
 
     /**

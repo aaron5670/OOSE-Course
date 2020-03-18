@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Garage {
     private ArrayList<Vervoermiddel> garage = new ArrayList<Vervoermiddel>();
     
-    public Garage(int aantalAutosInGarage) {
-        garage.add(new Vervoermiddel());
+    public Garage() {
+
     }
 
     public void zetVervoermiddelInGarage(Vervoermiddel vervoermiddel) {

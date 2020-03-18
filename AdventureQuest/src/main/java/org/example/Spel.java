@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 public class Spel {
     private ArrayList<Karakter> karakters = new ArrayList<>();
-    private Spelbord bord = new Spelbord(3);
-    private Garage garage = new Garage(1);
+    private Spelbord bord = new Spelbord();
+    private Garage garage = new Garage();
 
     public void meldAan(String naamKarakter) {
         Karakter k = new Karakter(naamKarakter);
-        k.haalVervoermiddelUitGarage();
 
         karakters.add(k);
         bord.plaatsOpVrijVakje(k);
