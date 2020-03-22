@@ -1,13 +1,14 @@
 package org.example;
 
-public class Vervoermiddel {
+public class Vervoermiddel implements IVervoermiddel {
     private Garage garage;
 
-    public void zetVervoermiddelInGarage() {
-        garage.zetVervoermiddelInGarage(this);
+    public void zetInGarage() {
+        //Implementatie
     }
 
-    public Vervoermiddel haalVervoermiddelUitGarage() {
-        return garage.getVervoermiddel();
+    public Vervoermiddel haalUitGarage() {
+        //Impementatie
+        return null;
     }
 }

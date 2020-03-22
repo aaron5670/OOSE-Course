@@ -1,19 +1,10 @@
 package org.example;
 
-import java.util.ArrayList;
-
 public class Garage {
-    private ArrayList<Vervoermiddel> garage = new ArrayList<Vervoermiddel>();
-    
-    public Garage() {
+    // ... other code ...
 
-    }
-
-    public void zetVervoermiddelInGarage(Vervoermiddel vervoermiddel) {
-        garage.add(vervoermiddel);
-    }
-
-    public Vervoermiddel getVervoermiddel() {
-        return garage.get(1);
+    public IVervoermiddel createVervoermiddel(String voertuigtype) {
+        VoertuigenFactory voertuigFactory = new VoertuigenFactory();
+        return voertuigFactory.createVervoermiddel(voertuigtype);
     }
 }
