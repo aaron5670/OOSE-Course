@@ -1,4 +1,8 @@
 package org.example;
 
-public class IDictionary {
+public interface IDictionary {
+
+    public String translate(String word);
+
+    public String getType();
 }
